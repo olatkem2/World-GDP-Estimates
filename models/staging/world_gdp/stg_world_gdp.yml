@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_world_gdp
+    description: World GDP data from https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+    columns: 
+      - name: country
+        description: The countries captured in this gdp estimates data
+        tests:
+          - not_null
+      - name: region
+        description: The regions of focus
+        tests:
+          - not_null
+      - name: estimate_type
+        description: "{{ doc('estimate_type') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Estimate IMF[1]
+                - Estimate World Bank[13]
+                - Estimate United Nations[14]
