@@ -54,8 +54,6 @@ This is truly bananas.
     Read more about Google's Import Functions [Here](https://support.google.com/docs/answer/3093339?hl=en&ref_topic=9199554)
 3. Open another blank sheet, Use the equal (=) sign and link it to the previous sheet to achieve a form of "First row as Header" type transformation.
 4. Open yet another sheet and insert this formula -  ARRAYFORMULA(SPLIT(FLATTEN(countries_gdp_semi_cleansed!F1:H1 & "," & countries_gdp_semi_cleansed!A2:A217 & "," & countries_gdp_semi_cleansed!B2:B217 & "," & countries_gdp_semi_cleansed!F2:H217), ","))
-    Read more about [FLATTEN](https://support.google.com/docs/answer/10307761?hl=en)
-    Read more about [SLPIT](https://support.google.com/docs/answer/3094136?hl=en)
-    Read more about [ARRAYFORMULA](https://support.google.com/docs/answer/3093275?hl=en)
+    Read more about [FLATTEN](https://support.google.com/docs/answer/10307761?hl=en), [SLPIT](https://support.google.com/docs/answer/3094136?hl=en) and [ARRAYFORMULA](https://support.google.com/docs/answer/3093275?hl=en)
  Our goal for the first four steps is to have our data in columnar format, with final 4 columns like; Estimate type, Country, Region and GDP
 5. 
