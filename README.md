@@ -18,6 +18,12 @@ comparing national standard of living. On the whole, PPP per capita figures are 
 
 This is a somewhat basic to intermediate project. Fell free to follow along.
 
+## Data Source
+
+Wikipedia - [List of Countries by GDP(Nominal)](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal))
+Gross domestic product (GDP) is a monetary measure of the market value of all the final goods and services produced and sold (not resold) in a specific time period
+by countries.
+
 ## Tools 
 
 1. Docker: This is the local version container that will house our Airbyte's Extract and Load solutions/App.
