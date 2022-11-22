@@ -3,7 +3,7 @@ A Modern Data Stack project with the aim of building and configuring a data pipe
 
 This is the second side-project that I am using to solidify my understanding of the Modern Data Stack and the Analytics Engineering Space.
 
-My first attempt at an analytics engineering can be found here[https://github.com/olatkem2/YML-Fashion-Hub---dbt-project] where I used the Fashion Industry as a case study and tried to hone my skills[Docker, Airbyte, BigQuery, dbt, Git, Metabase] at a basic level.
+My first attempt at an analytics engineering can be found [YML Fashion Hub](https://github.com/olatkem2/YML-Fashion-Hub---dbt-project) where I used the Fashion Industry as a case study and tried to hone my skills (Docker, Airbyte, BigQuery, dbt, Git, Metabase) at a basic level.
 If you need help on this tools, you can check out the link above.
 
 In this project, I will be trying to play around using both Google sheets and Postgres as my data source at different stage of the pipeline. This may not be so applicable in real life, It was necessary to try it out for future use. 
@@ -17,6 +17,12 @@ Comparisons of national wealth are also frequently made on the basis of purchasi
 comparing national standard of living. On the whole, PPP per capita figures are less spread than nominal GDP per capita.
 
 This is a somewhat basic to intermediate project. Fell free to follow along.
+
+## Data Source
+
+Wikipedia - [List of Countries by GDP(Nominal)](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal))
+Gross domestic product (GDP) is a monetary measure of the market value of all the final goods and services produced and sold (not resold) in a specific time period
+by countries.
 
 ## Tools 
 
@@ -32,14 +38,14 @@ This is a somewhat basic to intermediate project. Fell free to follow along.
 
 I will not cover the installation and config steps for the listed tools as I have already done so in my previous project, click the link above.
 
-## Workflow and Though-process
+## Workflow and Thought-process
 
 This is very simple. I will extract World GDP data from Wikipedia into google sheets, load into a staging layer in my local posgtres instance and load from postgres to my final destination, BigQuery.
 dbt will fetch the data from my data warehouse(i.e BigQuery) will develop, test, document, deploy and schedule custom models and well curated data.
-Tableau will then connect BigQuery using the transformed datasets provided by dbt to generate insights.
+Tableau will then connect to BigQuery using the transformed datasets provided by dbt to generate insights.
 
-The idea is that we have each tool doing what they know how to do best. Not bugging the BI Tool with heavy transformation and doing as much transformation 
-that can be done at the source. Also the ability to build in test at the source and model level, not forgetting incorporating documentation while all these is happening. 
+The idea is that we have each tool doing what it does best. Not bugging the BI Tool with heavy transformation and doing as much transformation 
+that can be done at the source. Also the ability to build in tests at the source and model level, not forgetting incorporating documentation while all these is happening. 
 This is truly bananas.
 
 ## steps
