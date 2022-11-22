@@ -42,10 +42,10 @@ I will not cover the installation and config steps for the listed tools as I hav
 
 This is very simple. I will extract World GDP data from Wikipedia into google sheets, load into a staging layer in my local posgtres instance and load from postgres to my final destination, BigQuery.
 dbt will fetch the data from my data warehouse(i.e BigQuery) will develop, test, document, deploy and schedule custom models and well curated data.
-Tableau will then connect BigQuery using the transformed datasets provided by dbt to generate insights.
+Tableau will then connect to BigQuery using the transformed datasets provided by dbt to generate insights.
 
-The idea is that we have each tool doing what they know how to do best. Not bugging the BI Tool with heavy transformation and doing as much transformation 
-that can be done at the source. Also the ability to build in test at the source and model level, not forgetting incorporating documentation while all these is happening. 
+The idea is that we have each tool doing what it does best. Not bugging the BI Tool with heavy transformation and doing as much transformation 
+that can be done at the source. Also the ability to build in tests at the source and model level, not forgetting incorporating documentation while all these is happening. 
 This is truly bananas.
 
 ## steps
