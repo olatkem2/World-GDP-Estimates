@@ -52,11 +52,51 @@ that can be done at the source. Also the ability to build in tests at the source
 This is truly bananas.
 
 ## steps
+
+## A. Google Sheets - Data Source
+
 1. Create a new workbook in Google sheets
 2. Navigate to a new blank sheet and insert this fornula - IMPORTHTML("https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)","Table",3)
     Read more about Google's Import Functions [Here](https://support.google.com/docs/answer/3093339?hl=en&ref_topic=9199554)
 3. Open another blank sheet, Use the equal (=) sign and link it to the previous sheet to achieve a form of "First row as Header" type transformation.
 4. Open yet another sheet and insert this formula -  ARRAYFORMULA(SPLIT(FLATTEN(countries_gdp_semi_cleansed!F1:H1 & "," & countries_gdp_semi_cleansed!A2:A217 & "," & countries_gdp_semi_cleansed!B2:B217 & "," & countries_gdp_semi_cleansed!F2:H217), ","))
     Read more about [FLATTEN](https://support.google.com/docs/answer/10307761?hl=en), [SLPIT](https://support.google.com/docs/answer/3094136?hl=en) and [ARRAYFORMULA](https://support.google.com/docs/answer/3093275?hl=en)
- Our goal for the first four steps is to have our data in columnar format, with final 4 columns like; Estimate type, Country, Region and GDP
-5. 
+ Our goal for the first four steps is to have our data in columnar format, with final 4 columns like; Estimate type, Country, Region and GDP.
+
+## B. Airbyte - Data Loader(EL Tool)
+
+5. Create two connections in Airbyte. 
+    a. To extract and load data from google sheets to Postgres. 
+        - Create a service account information in json format which can be gotten by creating a Google Workspace account.
+        - get the url of the google sheets and share it with the newly created google workspace account.
+        - Create a database in postgres and get the host, port, schema(default is public), username and password.
+    b. To extract and load from Postgres to BigQuery. 
+        - You will make use of the first two information in the previous steps as regards postgres BUT as used as a source now.
+        - Create a project in BigQuerywhich will service as our Database name. Create a Dataset, this will be our Schema.
+        - Generate the service account information for the newly created project in json format and paste in the required field.
+6. You can set the a custom schedule for both jobs to run. Remember if its running locally on your desktop/Docker, your docker must be up and running.
+
+## C. dbt - Developing, Transorming, Modelling, Testing, Deploying, documenting
+
+7. Create a new project and name it appropraitely.
+8. Use the previously generated service account information as required.
+9. Create a blank repository in Github and link to dbt BUT if you want dbt to manage it for you, click manage repository.
+10. Determine and map out the folder/directory naming convention and files naming convention.
+11. Start building your source files in yml file format in your models directory on a subfolder by subfolder basis i.e staging/stg_world_gdp_estimates.sql
+12. Determine the Data Modelling Methodology. Basic data cleansing and transformations were perfomred here
+13. Work on the dbt project file to choose what dbt will materialize as view or table. Usually model files in mart are materialized as tables and staging as as views
+14. Create yml file for sub-folders in staging to cature documentation and the generic tests.
+15. Create singular tests for additional layer of testing.
+16. Create a production environment and create custom jobs to run your dbt models or at the folder level
+
+## D. Github - CI/CD and Colloration
+
+17. Use Github for CI/CD and for better collaboration which you can achieve on github or VS Code
+
+## E. Tableau - Dashboarding(insights)
+
+
+
+
+
+
