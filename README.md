@@ -1,5 +1,7 @@
 
 ![project banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/World%20GDP%20Estimates%20Modern%20Data%20Stack%20image.JPG)
+![lineage banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/dbt_source_to_exposure_image.JPG)
+
 
 # World-GDP-Estimates
 A Modern Data Stack project with the aim of building and configuring a data pipeline that ingest data from source to destination,  create version controlled transformations, testing, deployment, documentation and delivering insights.
@@ -111,6 +113,9 @@ Below is a snippet of the Dashbaord, Both Interactive and Dynamic. Click here fo
 
 ![Dashboard Image](https://github.com/olatkem2/World-GDP-Estimates/blob/main/images/World%20GDP%20Estimates%20Dashboard%20image.JPG)
 
+## All in One View - dbt exposures beauty
+
+![lineage banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/dbt_source_to_exposure_image.JPG)
 
 ## F. Challenges
 
