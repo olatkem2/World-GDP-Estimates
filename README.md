@@ -65,7 +65,7 @@ This is truly bananas.
 
 ## B. Airbyte - Data Loader(EL Tool)
 
-5. Create two connections in Airbyte. 
+1. Create two connections in Airbyte. 
     a. To extract and load data from google sheets to Postgres. 
         - Create a service account information in json format which can be gotten by creating a Google Workspace account.
         - get the url of the google sheets and share it with the newly created google workspace account.
@@ -74,26 +74,46 @@ This is truly bananas.
         - You will make use of the first two information in the previous steps as regards postgres BUT as used as a source now.
         - Create a project in BigQuerywhich will service as our Database name. Create a Dataset, this will be our Schema.
         - Generate the service account information for the newly created project in json format and paste in the required field.
-6. You can set the a custom schedule for both jobs to run. Remember if its running locally on your desktop/Docker, your docker must be up and running.
+2. You can set the a custom schedule for both jobs to run. Remember if its running locally on your desktop/Docker, your docker must be up and running.
 
 ## C. dbt - Developing, Transorming, Modelling, Testing, Deploying, documenting
 
-7. Create a new project and name it appropraitely.
-8. Use the previously generated service account information as required.
-9. Create a blank repository in Github and link to dbt BUT if you want dbt to manage it for you, click manage repository.
-10. Determine and map out the folder/directory naming convention and files naming convention.
-11. Start building your source files in yml file format in your models directory on a subfolder by subfolder basis i.e staging/stg_world_gdp_estimates.sql
-12. Determine the Data Modelling Methodology. Basic data cleansing and transformations were perfomred here
-13. Work on the dbt project file to choose what dbt will materialize as view or table. Usually model files in mart are materialized as tables and staging as as views
-14. Create yml file for sub-folders in staging to cature documentation and the generic tests.
-15. Create singular tests for additional layer of testing.
-16. Create a production environment and create custom jobs to run your dbt models or at the folder level.
+1. Create a new project and name it appropraitely.
+2. Use the previously generated service account information as required.
+3. Create a blank repository in Github and link to dbt BUT if you want dbt to manage it for you, click manage repository.
+4. Determine and map out the folder/directory naming convention and files naming convention.
+5. Start building your source files in yml file format in your models directory on a subfolder by subfolder basis i.e staging/stg_world_gdp_estimates.sql
+6. Determine the Data Modelling Methodology. Basic data cleansing and transformations were perfomred here
+7. Work on the dbt project file to choose what dbt will materialize as view or table. Usually model files in mart are materialized as tables and staging as as views
+8. Create yml file for sub-folders in staging to cature documentation and the generic tests.
+9. Create singular tests for additional layer of testing.
+10. Create a production environment and create custom jobs to run your dbt models or at the folder level.
 
 ## D. Github - CI/CD and Collaboration
 
-17. Use Github for CI/CD and for better collaboration which you can achieve on github or VS Code
+1. Use Github for CI/CD and for better collaboration which you can achieve on github or VS Code
 
 ## E. Power BI - Dashboarding(insights)
+
+1. The goal is to build a dynamic and interactive visualization that tells the World Nominal GDP Story with a near-real time automatic refresh.
+2. Create and name a new Power BI file using Power BI Desktop
+3. Connect to BigQuery by using the Service Account option. 
+    a. Use the project name as the Project ID and continue.
+    b. Connect using the Direct Query Option.
+    c. Use the client email from the service account information you created linked to the BigQuery Account as the username.
+    d. Alter all the contents of the service account info in the json file to be a one-liner, copy and paste as the password. 
+4. Load the data into the model and publish the data. This will be Power BI Datasets in the Power BI Service.
+5. In Power BI Service, Go to settings and datasets and configure Data source credentials. Use Basic Authentication and repeat as in step 3c and 3d above.
+6. Also configure a scheduled Refresh. Mine is set at every 15 minutes. You can manually overide this by simply refresh your browser and the latest data will appear.
+7. I used Power BI AI powered to generate quick insights and alterred the visuals and added textbox to further customise the look and feel of the Dashboard.
+
+Below is a snippet of the Dashbaord, Both Interactive and Dynamic
+
+
+
+## F. Challenges
+
+1. Although I can set a schduled refresh for both of my connections in Airbyte and my dbt models, It is quite important to have a wholistic view of all this tools and have them run on a schedule in the same platform. Airflow or Dagster should come in Handy here
 
 
 
