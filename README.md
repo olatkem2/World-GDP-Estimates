@@ -51,7 +51,7 @@ The idea is that we have each tool doing what it does best. Not bugging the BI T
 that can be done at the source. Also the ability to build in tests at the source and model level, not forgetting incorporating documentation while all these is happening. 
 This is truly bananas.
 
-## steps
+## Steps
 
 ## A. Google Sheets - Data Source
 
