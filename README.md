@@ -37,7 +37,7 @@ by countries.
 6. dbt Cloud: This is our development, test, deployment, documentation, transformation, modelling and scheduling tool for our models.
 7. Git and Github: This is our version control tool to enable collaboration and seamless CI[continuous Integration].
 8. VS Code: This is our Integrated Development Environment, IDE where we can easily make changes to a cloned branch of our project,commit and merge.
-9. Tableau: This is our Business Intelligence Layer to tell story in digestible form coming as insights.
+9. Power BI: This is our Business Intelligence Layer to tell story in digestible form coming as insights.
 
 I will not cover the installation and config steps for the listed tools as I have already done so in my previous project, click the link above.
 
@@ -45,7 +45,7 @@ I will not cover the installation and config steps for the listed tools as I hav
 
 This is very simple. I will extract World GDP data from Wikipedia into google sheets, load into a staging layer in my local posgtres instance and load from postgres to my final destination, BigQuery.
 dbt will fetch the data from my data warehouse(i.e BigQuery) will develop, test, document, deploy and schedule custom models and well curated data.
-Tableau will then connect to BigQuery using the transformed datasets provided by dbt to generate insights.
+Power BI will then connect to BigQuery using the transformed datasets provided by dbt to generate insights.
 
 The idea is that we have each tool doing what it does best. Not bugging the BI Tool with heavy transformation and doing as much transformation 
 that can be done at the source. Also the ability to build in tests at the source and model level, not forgetting incorporating documentation while all these is happening. 
@@ -87,13 +87,13 @@ This is truly bananas.
 13. Work on the dbt project file to choose what dbt will materialize as view or table. Usually model files in mart are materialized as tables and staging as as views
 14. Create yml file for sub-folders in staging to cature documentation and the generic tests.
 15. Create singular tests for additional layer of testing.
-16. Create a production environment and create custom jobs to run your dbt models or at the folder level
+16. Create a production environment and create custom jobs to run your dbt models or at the folder level.
 
-## D. Github - CI/CD and Colloration
+## D. Github - CI/CD and Collaboration
 
 17. Use Github for CI/CD and for better collaboration which you can achieve on github or VS Code
 
-## E. Tableau - Dashboarding(insights)
+## E. Power BI - Dashboarding(insights)
 
 
 
