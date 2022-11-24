@@ -111,10 +111,11 @@ This is truly bananas.
 
 Below is a snippet of the Dashbaord, Both Interactive and Dynamic. Click here for interactive view - [World GDP Estimates](https://app.powerbi.com/view?r=eyJrIjoiMTVkZWRmYjAtNGY4My00Mzk4LWE0YWMtMGVhYmI1YmE0ODc1IiwidCI6IjNiZGFjNmEwLWVlNDYtNDQzMC05OGFiLWZiNTJmYTI2MWMyOCIsImMiOjl9&pageName=ReportSection)
 
-
-![lineage banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/dbt_source_to_exposure_image.JPG) <br>
 ![Dashboard Image](https://github.com/olatkem2/World-GDP-Estimates/blob/main/images/World%20GDP%20Estimates%20Dashboard%20image.JPG)
 
+## All in One View - dbt exposures beauty
+
+![lineage banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/dbt_source_to_exposure_image.JPG)
 
 ## F. Challenges
 
