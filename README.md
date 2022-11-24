@@ -107,8 +107,9 @@ This is truly bananas.
 6. Also configure a scheduled Refresh. Mine is set at every 15 minutes. You can manually overide this by simply refresh your browser and the latest data will appear.
 7. I used Power BI AI powered to generate quick insights and alterred the visuals and added textbox to further customise the look and feel of the Dashboard.
 
-Below is a snippet of the Dashbaord, Both Interactive and Dynamic
+Below is a snippet of the Dashbaord, Both Interactive and Dynamic. Click here for interactive view - [World GDP Estimates](https://app.powerbi.com/view?r=eyJrIjoiMTVkZWRmYjAtNGY4My00Mzk4LWE0YWMtMGVhYmI1YmE0ODc1IiwidCI6IjNiZGFjNmEwLWVlNDYtNDQzMC05OGFiLWZiNTJmYTI2MWMyOCIsImMiOjl9&pageName=ReportSection)
 
+![Dashboard Image](https://github.com/olatkem2/World-GDP-Estimates/blob/main/images/World%20GDP%20Estimates%20Dashboard%20image.JPG)
 
 
 ## F. Challenges
