@@ -1,5 +1,22 @@
 version: 2
 
+exposures:
+
+  - name: world_gdp_dashboard
+    type: dashboard
+    maturity: high
+    url: https://app.powerbi.com/view?r=eyJrIjoiMTVkZWRmYjAtNGY4My00Mzk4LWE0YWMtMGVhYmI1YmE0ODc1IiwidCI6IjNiZGFjNmEwLWVlNDYtNDQzMC05OGFiLWZiNTJmYTI2MWMyOCIsImMiOjl9&pageName=ReportSection
+    description: >
+      A dynamic and interactive visualization that tells the World Nominal GDP Story with a near-real time automatic refresh.
+
+    depends_on:
+      - ref('fct_world_gdp')
+      - source('world_gdp_estimates_raw', 'countries_gdp_cleansed')
+
+    owner:
+      name: Kayode Olatunji
+      email: olatkem@outlook.com
+
 models:
   - name: stg_world_gdp
     description: World GDP data from https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
