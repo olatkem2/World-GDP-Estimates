@@ -51,12 +51,12 @@ The idea is that we have each tool doing what it does best. Not bugging the BI T
 that can be done at the source. Also the ability to build in tests at the source and model level, not forgetting incorporating documentation while all these is happening. 
 This is truly bananas.
 
-## steps
+## Steps
 
 ## A. Google Sheets - Data Source
 
 1. Create a new workbook in Google sheets
-2. Navigate to a new blank sheet and insert this fornula - IMPORTHTML("https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)","Table",3)
+2. Navigate to a new blank sheet and insert this fornula - IMPORTHTML("https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)","Table",3) <br>
     Read more about Google's Import Functions [Here](https://support.google.com/docs/answer/3093339?hl=en&ref_topic=9199554)
 3. Open another blank sheet, Use the equal (=) sign and link it to the previous sheet to achieve a form of "First row as Header" type transformation.
 4. Open yet another sheet and insert this formula -  ARRAYFORMULA(SPLIT(FLATTEN(countries_gdp_semi_cleansed!F1:H1 & "," & countries_gdp_semi_cleansed!A2:A217 & "," & countries_gdp_semi_cleansed!B2:B217 & "," & countries_gdp_semi_cleansed!F2:H217), ","))
@@ -65,15 +65,15 @@ This is truly bananas.
 
 ## B. Airbyte - Data Loader(EL Tool)
 
-1. Create two connections in Airbyte. 
-    a. To extract and load data from google sheets to Postgres. 
-        - Create a service account information in json format which can be gotten by creating a Google Workspace account.
-        - get the url of the google sheets and share it with the newly created google workspace account.
-        - Create a database in postgres and get the host, port, schema(default is public), username and password.
-    b. To extract and load from Postgres to BigQuery. 
-        - You will make use of the first two information in the previous steps as regards postgres BUT as used as a source now.
-        - Create a project in BigQuerywhich will service as our Database name. Create a Dataset, this will be our Schema.
-        - Generate the service account information for the newly created project in json format and paste in the required field.
+1. Create two connections in Airbyte. <br>
+    a. To extract and load data from google sheets to Postgres. <br>
+        - Create a service account information in json format which can be gotten by creating a Google Workspace account. <br>
+        - get the url of the google sheets and share it with the newly created google workspace account. <br>
+        - Create a database in postgres and get the host, port, schema(default is public), username and password. <br>
+    b. To extract and load from Postgres to BigQuery. <br>
+        - You will make use of the first two information in the previous steps as regards postgres BUT as used as a source now. <br>
+        - Create a project in BigQuerywhich will service as our Database name. Create a Dataset, this will be our Schema. <br>
+        - Generate the service account information for the newly created project in json format and paste in the required field. <br>
 2. You can set the a custom schedule for both jobs to run. Remember if its running locally on your desktop/Docker, your docker must be up and running.
 
 ## C. dbt - Developing, Transorming, Modelling, Testing, Deploying, documenting
@@ -97,23 +97,28 @@ This is truly bananas.
 
 1. The goal is to build a dynamic and interactive visualization that tells the World Nominal GDP Story with a near-real time automatic refresh.
 2. Create and name a new Power BI file using Power BI Desktop
-3. Connect to BigQuery by using the Service Account option. 
-    a. Use the project name as the Project ID and continue.
-    b. Connect using the Direct Query Option.
-    c. Use the client email from the service account information you created linked to the BigQuery Account as the username.
-    d. Alter all the contents of the service account info in the json file to be a one-liner, copy and paste as the password. 
+3. Connect to BigQuery by using the Service Account option. <br>
+    a. Use the project name as the Project ID and continue. <br>
+    b. Connect using the Direct Query Option. <br>
+    c. Use the client email from the service account information you created linked to the BigQuery Account as the username. <br>
+    d. Alter all the contents of the service account info in the json file to be a one-liner, copy and paste as the password. <br>
 4. Load the data into the model and publish the data. This will be Power BI Datasets in the Power BI Service.
 5. In Power BI Service, Go to settings and datasets and configure Data source credentials. Use Basic Authentication and repeat as in step 3c and 3d above.
 6. Also configure a scheduled Refresh. Mine is set at every 15 minutes. You can manually overide this by simply refresh your browser and the latest data will appear.
 7. I used Power BI AI powered to generate quick insights and alterred the visuals and added textbox to further customise the look and feel of the Dashboard.
 
-Below is a snippet of the Dashbaord, Both Interactive and Dynamic
+Below is a snippet of the Dashbaord, Both Interactive and Dynamic. Click here for interactive view - [World GDP Estimates](https://app.powerbi.com/view?r=eyJrIjoiMTVkZWRmYjAtNGY4My00Mzk4LWE0YWMtMGVhYmI1YmE0ODc1IiwidCI6IjNiZGFjNmEwLWVlNDYtNDQzMC05OGFiLWZiNTJmYTI2MWMyOCIsImMiOjl9&pageName=ReportSection)
 
+![Dashboard Image](https://github.com/olatkem2/World-GDP-Estimates/blob/main/images/World%20GDP%20Estimates%20Dashboard%20image.JPG)
 
 
 ## F. Challenges
 
-1. Although I can set a schduled refresh for both of my connections in Airbyte and my dbt models, It is quite important to have a wholistic view of all this tools and have them run on a schedule in the same platform. Airflow or Dagster should come in Handy here
+1. Although I can set a scheduled refresh for both of my connections in Airbyte and my dbt models, It is quite important to have a wholistic view of all this tools and have them run on a schedule in the same platform. Airflow or Dagster should come in Handy here
+
+## G. Useful Link(s)
+
+1. [Live and Interactive Power BI connection from BigQuery](https://learn.microsoft.com/en-us/power-query/connectors/googlebigquery)
 
 
 
