@@ -65,7 +65,7 @@ This is truly bananas.
 
 ## B. Airbyte - Data Loader(EL Tool)
 
-1. Create two connections in Airbyte. 
+1. Create two connections in Airbyte. <br>
     a. To extract and load data from google sheets to Postgres. <br>
         - Create a service account information in json format which can be gotten by creating a Google Workspace account. <br>
         - get the url of the google sheets and share it with the newly created google workspace account. <br>
@@ -116,7 +116,7 @@ Below is a snippet of the Dashbaord, Both Interactive and Dynamic. Click here fo
 
 1. Although I can set a scheduled refresh for both of my connections in Airbyte and my dbt models, It is quite important to have a wholistic view of all this tools and have them run on a schedule in the same platform. Airflow or Dagster should come in Handy here
 
-## F. Challenges
+## G. Useful Link(s)
 
 1. [Live and Interactive Power BI connection from BigQuery](https://learn.microsoft.com/en-us/power-query/connectors/googlebigquery)
 
