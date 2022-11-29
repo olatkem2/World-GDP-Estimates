@@ -1,5 +1,5 @@
 
-![project banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/World%20GDP%20Estimates%20Modern%20Data%20Stack%20image.JPG)
+![project banner](https://github.com/olatkem2/World-GDP-Estimates/blob/main/images/World%20GDP%20Estimates%20Modern%20Data%20Stack%20image.JPG)
 ![lineage banner](https://github.com/olatkem2/World-GDP-Estimates/blob/dev/images/dbt_source_to_exposure_image.JPG)
 
 
