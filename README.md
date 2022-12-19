@@ -11,8 +11,8 @@ This is the second side-project that I am using to solidify my understanding of 
 My first attempt at an analytics engineering can be found [YML Fashion Hub](https://github.com/olatkem2/YML-Fashion-Hub---dbt-project) where I used the Fashion Industry as a case study and tried to hone my skills (Docker, Airbyte, BigQuery, dbt, Git, Metabase) at a basic level.
 If you need help on this tools, you can check out the link above.
 
-In this project, I will be trying to play around using both Google sheets and Postgres as my data source at different stage of the pipeline. This may not be so applicable in real life, It was necessary to try it out for future use. 
-Even though this is an Analytics Engineering project, I will use Power BI as my preferred BI Tool here just because I feel it will better bring my data to life and it shines with Map visuals which I will be using here.
+In this project, I will be trying to play around using both Google sheets and Postgres as my data source at different stage of the pipeline. This may not be so applicable in real life, it was necessary to try it out for practicals.
+Even though this is an Analytics Engineering project, I will use Power BI as my preferred BI Tool here just because I feel it will better bring my data to life.
 
 Gross domestic product (GDP) is the market value of all final goods and services from a nation in a given year. Countries are sorted by nominal GDP estimates from financial and statistical institutions, which are calculated at market or government official exchange rates. 
 Nominal GDP does not take into account differences in the cost of living in different countries, and the results can vary greatly from one year to another based on fluctuations in the exchange rates of the country's currency. Such fluctuations may change a country's 
